@@ -126,9 +126,10 @@ struct uzlib_uncomp {
 };
 
 #include "tinf_compat.h"
+#include "../../libc/xtensa-lx106-elf/include/sys/pgmspace.h"
 
 #ifndef ALIGN_READ
-#define ALIGN_READ(x) (*(x))
+#define ALIGN_READ(x) pgm_read_byte(x)
 #endif
 
 #ifndef ALIGN_WRITE
